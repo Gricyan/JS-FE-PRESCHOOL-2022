@@ -22,13 +22,14 @@
     --white: #ffffff;
     --header-font: 'Merriweather', serif;
     --basic-font: 'Inter', sans-serif;
-    --bold-font: 3.75rem;
-    --regular-font: 1.25rem;
+    --bold-font: 60px;
+    --regular-font: 20px;
 }
 
 html {
     scroll-behavior: smooth;
     font-family: var(--basic-font);
+    font-size: var(--regular-font);
 }
 
 body {
@@ -38,8 +39,8 @@ body {
 
 .container {
     /*max-width: 1440px; changed for first part task cross check*/
-    box-sizing: border-box;
-    width: 1440px;
+    /*box-sizing: border-box;*/
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -48,8 +49,12 @@ body {
     position: relative;
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    height: 90px;
     align-items: center;
+}
+
+.header-logo {
+    padding-left: 20px;
 }
 
 nav {
@@ -66,17 +71,20 @@ nav {
 
 .nav-list {
     width: 500px;
-    height: 50px;
 }
 
 .language-nav-list {
-    width: 70px;
-    height: 50px;
+    width: 58px;
+    padding-right: 10px;
 }
 
-.nav-link {
-    padding: 0 20px;
-    line-height: 50px;
+.nav-list .nav-link {
+    padding: 0 15px;
+    transition: .3s;
+}
+
+.language-nav-list .nav-link {
+    padding: 0 10px;
     transition: .3s;
 }
 
@@ -95,7 +103,36 @@ nav {
     display: block;
 }
 
+.header-container {
+    position: relative;
+}
+
+.header-container::before {
+    position: absolute;
+    content: "";
+    background-image: url("../assets/img/bg.jpg");
+    min-width: 1440px;
+    min-height: 910px;
+    top: 0;
+    z-index: -1;
+}
+
+.hero-content {
+    width: 480px;
+    padding-top: 145px;
+    padding-left: 80px;
+}
+
 h1 {
     font-family: var(--header-font);
     font-size: var(--bold-font);
+}
+
+.hero-content p {
+    line-height: 2em;
+    margin: -5px 0 25px;
+}
+
+button {
+    padding: 15px 72px;
 }
