@@ -17,10 +17,13 @@
 }
 
 :root {
-    --bg-color: #222;
+    --bg-dark: #000000;
+    --gold: #bdae82;
+    --white: #ffffff;
     --header-font: 'Merriweather', serif;
     --basic-font: 'Inter', sans-serif;
-    --basic-font: 1rem;
+    --bold-font: 3.75rem;
+    --regular-font: 1.25rem;
 }
 
 html {
@@ -28,18 +31,47 @@ html {
     font-family: var(--basic-font);
 }
 
+body {
+    background-color: var(--bg-dark);
+    color: var(--white);
+}
+
 .container {
     /*max-width: 1440px; changed for first part task cross check*/
+    box-sizing: border-box;
     width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.nav-list {
+.header-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+}
+
+.nav-list,
+.language-nav-list {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     list-style: none;
+}
+
+.nav-list {
+    width: 500px;
+    height: 50px;
+}
+
+.language-nav-list {
+    width: 70px;
+    height: 50px;
 }
 
 .nav-link {
@@ -49,20 +81,21 @@ html {
 }
 
 .nav-item a {
-    color: #829985;
+    color: var(--white);
     text-decoration: none;
     transition: color 0.5s;
 }
 
 .nav-item a:hover {
-    color: #4d2323;
+    color: var(--gold);
+}
+
+.header-logo img {
+    width: 100%;
+    display: block;
 }
 
 h1 {
     font-family: var(--header-font);
-}
-
-body {
-    background-color: #222;
-    color: #ddd;
+    font-size: var(--bold-font);
 }
