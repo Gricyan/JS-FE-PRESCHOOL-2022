@@ -17,7 +17,7 @@
 }
 
 :root {
-    --bg-color: #030303;
+    --bg-color: #222;
     --header-font: 'Merriweather', serif;
     --basic-font: 'Inter', sans-serif;
     --basic-font: 1rem;
@@ -26,14 +26,43 @@
 html {
     scroll-behavior: smooth;
     font-family: var(--basic-font);
-    min-width: 1920px;
+}
+
+.container {
+    /*max-width: 1440px; changed for first part task cross check*/
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-link {
+    padding: 0 20px;
+    line-height: 50px;
+    transition: .3s;
+}
+
+.nav-item a {
+    color: #829985;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-item a:hover {
+    color: #4d2323;
+}
+
+h1 {
+    font-family: var(--header-font);
 }
 
 body {
     background-color: #222;
     color: #ddd;
-}
-
-h1 {
-    font-family: var(--basic-font);
 }
