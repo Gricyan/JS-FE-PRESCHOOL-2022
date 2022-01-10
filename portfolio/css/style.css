@@ -151,17 +151,28 @@ h1 {
 
 button {
   padding: 15px 72px;
-  background-color: var(--gold);
   border: 2px solid var(--gold);
   font-family: inherit;
   cursor: pointer;
 }
 
-button:hover {
+.btn-gold {
+  background-color: var(--gold);
+}
+
+.btn-black {
+  background-color: transparent;
+  color: var(--gold);
+}
+
+.btn-gold:hover,
+.btn-black:hover {
   color: var(--white);
 }
 
-.skills-container {
+.skills-container,
+.portfolio-container,
+.video-container {
   padding-top: 29px;
 }
 
@@ -247,4 +258,28 @@ button:hover {
   padding-top: 10px;
   font-size: 0.9em;
   line-height: 2;
+}
+
+.portfolio-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 895px;
+  margin: 43px auto;
+}
+
+.portfolio-button-item button {
+  width: 220px;
+}
+
+.portfolio-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 25px;
+  padding-top: 16px;
+}
+
+.portfolio-container {
+  margin-bottom: 30px;
 }
