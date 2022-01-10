@@ -172,7 +172,8 @@ button {
 
 .skills-container,
 .portfolio-container,
-.video-container {
+.video-container,
+.price-container {
   padding-top: 29px;
 }
 
@@ -282,4 +283,25 @@ button {
 
 .portfolio-container {
   margin-bottom: 30px;
+}
+
+.video-player {
+  position: relative;
+  margin: 44px auto 30px;
+}
+
+.video-player::before {
+  position: absolute;
+  content: "";
+  width: 130px;
+  height: 130px;
+  background-image: url('../assets/svg/player-btn.svg');
+  background-repeat: no-repeat;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -52%);
+  -moz-transform: translate(-50%, -52%);
+  -ms-transform: translate(-50%, -52%);
+  -o-transform: translate(-50%, -52%);
+  transform: translate(-50%, -52%);
 }
