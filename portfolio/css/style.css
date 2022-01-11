@@ -356,3 +356,73 @@ button {
 .price-item .btn-gold {
   margin-top: 17px;
 }
+
+.contact-container {
+  margin-top: 100px;
+}
+
+.contact-container::before {
+  position: absolute;
+  content: "";
+  background-image: url("../assets/img/contacts.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  min-width: 1440px;
+  min-height: 700px;
+  margin-left: -20px;
+  z-index: -1;
+}
+
+.contact-form-container {
+  width: 450px;
+  float: right;
+  margin-top: 45px;
+}
+
+.contact-form-container::after {
+  clear: both;
+}
+
+.contact-title {
+  font-family: var(--header-font);
+  font-size: var(--h2-font);
+  color: var(--gold);
+}
+
+::placeholder {
+  font-family: inherit;
+  color: var(--gold);
+  font-size: var(--basic-font);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--gold);
+  transition: background-color 0s ease-in-out 9000s;
+}
+
+input {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--gold);
+  width: 426px;
+  height: 43px;
+  margin-bottom: 21px;
+  padding-left: 18px;
+}
+
+textarea {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--gold);
+  width: 426px;
+  height: 82px;
+  margin-bottom: 25px;
+  padding-top: 12px;
+  padding-left: 18px;
+  resize: none;
+}
+
+.contact-form {
+  padding-top: 23px;
+}
