@@ -71,28 +71,26 @@ body {
 }
 
 .nav-list {
-  display: flex;
+  display: inline-flex;
   justify-content: space-evenly;
   align-items: center;
   list-style: none;
   width: 480px;
-  margin-right: 20px;
+  margin-inline-end: 15px;
 }
 
 .language-nav-list {
-  display: flex;
+  display: inline-flex;
   justify-content: flex-end;
+  width: 60px;
   align-items: center;
+  padding-inline-start: 0px;
   list-style: none;
 }
 
 .nav-list .nav-link {
   padding: 0px 10px;
   transition: .3s;
-}
-
-.language-nav {
-  width: 60px;
 }
 
 .language-nav-list .nav-item {
