@@ -189,6 +189,7 @@ button {
   position: relative;
   font-family: var(--header-font);
   font-size: var(--h2-font);
+  color: var(--gold);
 }
 
 .section-title::before,
@@ -287,7 +288,7 @@ button {
 
 .video-player {
   position: relative;
-  margin: 44px auto 30px;
+  margin: 44px auto 31px;
 }
 
 .player-btn {
@@ -317,7 +318,7 @@ button {
 .price-items {
   display: flex;
   justify-content: space-between;
-  padding-top: 23px;
+  padding-top: 25px;
 }
 
 .price-item {
@@ -340,7 +341,7 @@ button {
   font-size: 1.2em;
   font-weight: 700;
   color: var(--gold);
-  padding-top: 11px;
+  padding-top: 10px;
 }
 
 .price-item>ul {
@@ -411,6 +412,7 @@ input {
   height: 43px;
   margin-bottom: 21px;
   padding-left: 18px;
+  color: var(--white);
 }
 
 textarea {
@@ -421,6 +423,7 @@ textarea {
   margin-bottom: 25px;
   padding-top: 12px;
   padding-left: 18px;
+  color: var(--white);
   resize: none;
 }
 
@@ -439,18 +442,34 @@ textarea {
   text-decoration: none;
 }
 
+.git-and-date p {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.rs-school {
+  padding-left: 60px;
+}
+
 .social-list {
   display: flex;
   justify-content: space-between;
+  width: 188px;
+  margin-top: 14px;
   align-items: center;
   list-style: none;
-  width: 188px;
 }
 
 .social-item {
   width: 32px;
   height: 32px;
-  display: inline-flex;
+}
+
+.social-item-link {
+  display: block;
+  width: 32px;
+  height: 32px;
 }
 
 .social-item:nth-child(1) {
@@ -458,6 +477,7 @@ textarea {
   background-size: 32px 32px;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.3s;
 }
 
 .social-item:nth-child(2) {
@@ -465,6 +485,7 @@ textarea {
   background-size: 32px 32px;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.3s;
 }
 
 .social-item:nth-child(3) {
@@ -472,6 +493,7 @@ textarea {
   background-size: 32px 32px;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.3s;
 }
 
 .social-item:nth-child(4) {
@@ -479,4 +501,12 @@ textarea {
   background-size: 32px 32px;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.3s;
+}
+
+.social-item:nth-child(1):hover,
+.social-item:nth-child(2):hover,
+.social-item:nth-child(3):hover,
+.social-item:nth-child(4):hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
