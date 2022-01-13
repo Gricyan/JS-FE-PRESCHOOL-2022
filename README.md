@@ -3,4 +3,4 @@ Private repository for @gricyan
 
 
 ## task Portfolio#1
-https://github.com/rolling-scopes-school/gricyan-JSFEPRESCHOOL/portfolio/
+https://rolling-scopes-school.github.io/gricyan-JSFEPRESCHOOL/portfolio/
