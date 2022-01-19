@@ -557,13 +557,20 @@ textarea {
     margin-left: 22px;
     z-index: 1;
   }
+  .nav-container {
+    overflow-x: hidden;
+  }
   .nav {
-    position: absolute;
+    position: fixed;
     width: 620px;
     height: 1024px;
     top: 0;
-    right: 0;
+    right: -620px;
     background-color: var(--bg-dark);
+    transition: 0.5s;
+  }
+  .nav.is-active {
+    right: 0px;
   }
   .nav-list {
     flex-direction: column;
