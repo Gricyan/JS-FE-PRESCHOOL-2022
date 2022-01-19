@@ -107,6 +107,10 @@ body {
   color: var(--gold);
 }
 
+.active-gold a {
+  color: var(--gold);
+}
+
 .header-logo img {
   width: 100%;
   display: block;
