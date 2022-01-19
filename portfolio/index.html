@@ -8,6 +8,7 @@
   <title>Portfolio</title>
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/hamburger.css">
   <link rel="icon" href="./assets/img/favicon.ico">
 </head>
 
@@ -19,20 +20,33 @@
           <div class="logo"></div>
           <!-- <img src="./assets/svg/logo.svg" width="50" height="50" alt="logo"> -->
         </a>
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-            <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-            <li class="nav-item"><a href="#video" class="nav-link">Video</a></li>
-            <li class="nav-item"><a href="#price" class="nav-link">Price</a></li>
-            <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
-          </ul>
+        <div class="nav-container">
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+              <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+              <li class="nav-item"><a href="#video" class="nav-link">Video</a></li>
+              <li class="nav-item"><a href="#price" class="nav-link">Price</a></li>
+              <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+        <nav class="language-nav">
           <ul class="language-nav-list">
             <li class="nav-item active-gold"><a href="#" class="nav-link">en</a></li>
             <li class="nav-item">/</li>
             <li class="nav-item"><a href="#" class="nav-link">ru</a></li>
           </ul>
         </nav>
+
+        <div class="hamburger-container">
+          <div class="hamburger" id="hamburger-menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div>
+
       </div>
     </div>
   </header>
@@ -148,17 +162,16 @@
         </div>
       </section>
       <section id="contacts" class="section contact-section">
-        <div class="contact-form-wrapper">
-          <div class="contact-container">
-            <div class="contact-form-container">
-              <h2 class="contact-title">Contact me</h2>
-              <form class="contact-form" action="#" method="post">
-                <input type="email" name="email" id="email" placeholder="E-mail">
-                <input type="tel" name="phone" id="phone" placeholder="Phone">
-                <textarea id="message" name="message" rows="4" placeholder="Message"></textarea>
-                <button type="submit" class="btn-gold">Send message</button>
-              </form>
-            </div>
+        <div class="contact-form-wrapper"></div>
+        <div class="contact-container">
+          <div class="contact-form-container">
+            <h2 class="contact-title">Contact me</h2>
+            <form class="contact-form" action="#" method="post">
+              <input type="email" name="email" id="email" placeholder="E-mail">
+              <input type="tel" name="phone" id="phone" placeholder="Phone">
+              <textarea id="message" name="message" rows="4" placeholder="Message"></textarea>
+              <button type="submit" class="btn-gold">Send message</button>
+            </form>
           </div>
         </div>
       </section>
@@ -195,6 +208,7 @@
       </div>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
   <script src="./js/index.js"></script>
 </body>
 
