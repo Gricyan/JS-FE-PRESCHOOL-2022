@@ -79,6 +79,11 @@ body {
   margin-inline-end: 20px;
 }
 
+.language-nav {
+  margin-right: 0;
+  transition: 0.3s;
+}
+
 .language-nav-list {
   display: inline-flex;
   justify-content: flex-end;
@@ -551,8 +556,14 @@ textarea {
     --h2-font: 40px;
     --regular-font: 20px;
   }
+  .language-nav {
+    margin-right: 125px;
+  }
   .hamburger-container {
     display: block;
+    position: fixed;
+    right: 20px;
+    top: 25px;
     margin-right: 45px;
     margin-left: 22px;
     z-index: 1;
@@ -568,6 +579,7 @@ textarea {
     right: -620px;
     background-color: var(--bg-dark);
     transition: 0.5s;
+    z-index: 1;
   }
   .nav.is-active {
     right: 0px;
