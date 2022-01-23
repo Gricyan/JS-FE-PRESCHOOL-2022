@@ -641,11 +641,6 @@ textarea {
     margin: 46px -60px 0px -60px;
     overflow: hidden;
   }
-  .video-player img {
-    width: 108%;
-    margin-left: -6px;
-    margin-right: -6px;
-  }
   .player-btn {
     width: 65px;
     height: 65px;
@@ -662,6 +657,12 @@ textarea {
   .price-item {
     width: 420px;
     margin-bottom: 50px;
+  }
+  .price-item h4 {
+    padding-top: 8px;
+  }
+  .price-item .btn-gold {
+    margin-top: 19px;
   }
   .contact-section {
     height: 600px;
@@ -709,7 +710,13 @@ textarea {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 620px) {
+  .nav.is-active {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
    :root {
     --bold-font: 1.6em;
     --h2-font: 32px;
