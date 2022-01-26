@@ -78,7 +78,6 @@ portfolioButtons.forEach((button) => {
 
     portfolioButtons.forEach((button) => {
       button.classList.remove('active-btn')
-      button.classList.remove('btn-black')
     })
     button.classList.add('active-btn')
   })
