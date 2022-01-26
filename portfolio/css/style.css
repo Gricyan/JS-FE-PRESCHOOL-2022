@@ -162,20 +162,20 @@ button {
   cursor: pointer;
 }
 
-.btn-gold {
+.button {
   width: 220px;
-  background-color: var(--gold);
-  transition: 0.3s;
 }
 
+
+/*
 .btn-black {
   background-color: transparent;
   color: var(--gold);
   transition: 0.3s;
-}
+}*/
 
 .btn-gold:hover,
-.btn-black:hover {
+.portfolio-btn:hover {
   color: var(--white);
 }
 
@@ -275,6 +275,21 @@ button {
 
 .portfolio-btn {
   width: 220px;
+  background-color: transparent;
+  color: var(--gold);
+  transition: 0.3s;
+}
+
+.btn-gold {
+  color: var(--bg-dark);
+  background-color: var(--gold);
+  transition: 0.3s;
+}
+
+.active-btn {
+  color: var(--bg-dark);
+  background-color: var(--gold);
+  transition: 0.3s;
 }
 
 .portfolio-gallery {

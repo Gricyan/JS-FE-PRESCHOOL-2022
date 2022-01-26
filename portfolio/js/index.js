@@ -65,12 +65,21 @@ preloadImages()
 
 // EventListener for season buttons
 
-const portfolioImages = document.querySelectorAll('.portfolio-image');
+const portfolioImages = document.querySelectorAll('.portfolio-image')
 const portfolioButtons = document.querySelectorAll('.portfolio-btn')
+
+console.log(portfolioButtons)
 
 portfolioButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const seasonButton = button.dataset.season
-    portfolioImages.forEach((img, index) => img.src = `./assets/img/gallery/${seasonButton}/${index + 1}.jpg`);
+
+    portfolioImages.forEach((img, index) => img.src = `./assets/img/gallery/${seasonButton}/${index + 1}.jpg`)
+
+    portfolioButtons.forEach((button) => {
+      button.classList.remove('active-btn')
+      button.classList.remove('btn-black')
+    })
+    button.classList.add('active-btn')
   })
-});
+})
