@@ -47,8 +47,30 @@ function closeMenu(event) {
   }
 }
 
-///
+// Gallery
 
-console.log('Вёрстка соответствует макету. Ширина экрана 768px +48')
-console.log('Включительно до 320px нет горизонтальной полосы прокрутки +15')
-console.log('На ширине экрана 768рх и меньше реализовано адаптивное меню +22')
+// Cache Images
+
+const seasons = ['winter', 'spring', 'summer', 'autumn'];
+
+function preloadImages() {
+  seasons.forEach(season => {
+    for (let i = 1; i <= 6; i++) {
+      const img = new Image();
+      img.src = `./assets/img/gallery/${season}/${i}.jpg`
+    }
+  })
+}
+preloadImages()
+
+// EventListener for season buttons
+
+const portfolioImages = document.querySelectorAll('.portfolio-image');
+const portfolioButtons = document.querySelectorAll('.portfolio-btn')
+
+portfolioButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const seasonButton = button.dataset.season
+    portfolioImages.forEach((img, index) => img.src = `./assets/img/gallery/${seasonButton}/${index + 1}.jpg`);
+  })
+});
