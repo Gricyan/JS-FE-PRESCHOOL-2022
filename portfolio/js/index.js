@@ -31,23 +31,23 @@ import i18Obj from './translate.js';
 
 // Second working variant as in a rs school task
 
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('.nav');
-const navLinks = document.querySelectorAll('.nav-link');
+const hamburger = document.querySelector('.hamburger')
+const nav = document.querySelector('.nav')
+const navLinks = document.querySelectorAll('.nav-link')
 
 function toggleMenu() {
-  hamburger.classList.toggle('is-active');
-  nav.classList.toggle('is-active');
+  hamburger.classList.toggle('is-active')
+  nav.classList.toggle('is-active')
 }
 
-hamburger.addEventListener('click', toggleMenu);
-nav.addEventListener('click', closeMenu);
-navLinks.forEach((el) => el.addEventListener('click', closeMenu));
+hamburger.addEventListener('click', toggleMenu)
+nav.addEventListener('click', closeMenu)
+navLinks.forEach((el) => el.addEventListener('click', closeMenu))
 
 function closeMenu(event) {
   if (event.target.classList.contains('nav-link')) {
-    hamburger.classList.remove('is-active');
-    nav.classList.remove('is-active');
+    hamburger.classList.remove('is-active')
+    nav.classList.remove('is-active')
   }
 }
 
@@ -55,7 +55,7 @@ function closeMenu(event) {
 
 // Cache Images
 
-const seasons = ['winter', 'spring', 'summer', 'autumn'];
+const seasons = ['winter', 'spring', 'summer', 'autumn']
 
 function preloadImages() {
   seasons.forEach(season => {
@@ -113,3 +113,29 @@ langNodeList.forEach((childElement) => {
     })
   })
 })
+
+// Day-Night switcher
+
+document.querySelector('.theme-toggle').addEventListener('click', (event) => {
+  event.preventDefault()
+  if (localStorage.getItem('theme') === 'light') {
+    localStorage.removeItem('theme')
+  } else {
+    localStorage.setItem('theme', 'light')
+  }
+  addLightClassToHtml()
+})
+
+function addLightClassToHtml() {
+  try {
+    if (localStorage.getItem('theme') === 'light') {
+      document.querySelector('html').classList.add('light')
+      document.querySelector('.theme-toggle').classList.add('sun')
+    } else {
+      document.querySelector('html').classList.remove('light')
+      document.querySelector('.theme-toggle').classList.remove('sun')
+    }
+  } catch (err) {}
+}
+
+addLightClassToHtml()
