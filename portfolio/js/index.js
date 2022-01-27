@@ -1,3 +1,7 @@
+// import translate.js
+
+import i18Obj from './translate.js';
+
 // jquery variant, jquery library has to be linked
 
 // $(document).ready(function() {
@@ -68,8 +72,6 @@ preloadImages()
 const portfolioImages = document.querySelectorAll('.portfolio-image')
 const portfolioButtons = document.querySelectorAll('.portfolio-btn')
 
-console.log(portfolioButtons)
-
 portfolioButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const seasonButton = button.dataset.season
@@ -80,5 +82,34 @@ portfolioButtons.forEach((button) => {
       button.classList.remove('active-btn')
     })
     button.classList.add('active-btn')
+  })
+})
+
+// Language switcher
+
+const navLanguages = document.querySelectorAll('.lang-link')
+const langNodeList = document.querySelectorAll('[data-i18]')
+let translation = {}
+let navLang
+
+langNodeList.forEach((childElement) => {
+  const langListItem = childElement.getAttribute('data-i18')
+
+  navLanguages.forEach((a) => {
+    a.addEventListener('click', () => {
+      navLang = a.dataset.lang
+      translation = i18Obj[navLang][langListItem]
+
+      if (childElement.placeholder) {
+        childElement.placeholder = translation
+      } else {
+        childElement.innerText = translation
+      }
+
+      navLanguages.forEach((a) => {
+        a.parentElement.classList.remove('active-lang')
+      })
+      a.parentElement.classList.add('active-lang')
+    })
   })
 })

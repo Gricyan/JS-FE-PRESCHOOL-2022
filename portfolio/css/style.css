@@ -112,8 +112,9 @@ body {
   color: var(--gold);
 }
 
-.active-gold a {
+.active-lang a {
   color: var(--gold);
+  transition: 0.3s;
 }
 
 .header-logo img {
