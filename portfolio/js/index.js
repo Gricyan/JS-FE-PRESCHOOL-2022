@@ -85,35 +85,6 @@ portfolioButtons.forEach((button) => {
   })
 })
 
-// Language switcher
-
-const navLanguages = document.querySelectorAll('.lang-link')
-const langNodeList = document.querySelectorAll('[data-i18]')
-let translation = {}
-let navLang
-
-langNodeList.forEach((childElement) => {
-  const langListItem = childElement.getAttribute('data-i18')
-
-  navLanguages.forEach((a) => {
-    a.addEventListener('click', () => {
-      navLang = a.dataset.lang
-      translation = i18Obj[navLang][langListItem]
-
-      if (childElement.placeholder) {
-        childElement.placeholder = translation
-      } else {
-        childElement.innerText = translation
-      }
-
-      navLanguages.forEach((a) => {
-        a.parentElement.classList.remove('active-lang')
-      })
-      a.parentElement.classList.add('active-lang')
-    })
-  })
-})
-
 // Day-Night switcher
 
 document.querySelector('.theme-toggle').addEventListener('click', (event) => {
@@ -130,8 +101,10 @@ function addLightClassToHtml() {
   try {
     if (localStorage.getItem('theme') === 'light') {
       document.querySelector('html').classList.add('light')
+      document.querySelector('html').classList.remove('dark')
       document.querySelector('.theme-toggle').classList.add('sun')
     } else {
+      document.querySelector('html').classList.add('dark')
       document.querySelector('html').classList.remove('light')
       document.querySelector('.theme-toggle').classList.remove('sun')
     }
@@ -139,3 +112,63 @@ function addLightClassToHtml() {
 }
 
 addLightClassToHtml()
+
+// Language switcher
+
+const navLanguages = document.querySelectorAll('.lang-link')
+const langNodeList = document.querySelectorAll('[data-i18]')
+let translation = {}
+let langItemKeys = []
+let chosenLang = ''
+
+const getTranslate = (chosenLang) => {
+  const translateCurrentLanguage = (langNodeList.forEach((currentElement) => {
+    let langListItem = currentElement.dataset.i18
+    translation = i18Obj[chosenLang][langListItem]
+
+    if (currentElement.placeholder) {
+      currentElement.placeholder = translation
+    } else {
+      currentElement.innerText = translation
+    }
+  }))
+}
+
+navLanguages.forEach((a) => {
+  a.addEventListener('click', () => {
+    chosenLang = a.dataset.lang
+    getTranslate(chosenLang)
+
+    localStorage.setItem('lang', chosenLang)
+
+    navLanguages.forEach((a) => {
+      a.parentElement.classList.remove('active-lang')
+    })
+    a.parentElement.classList.add('active-lang')
+  })
+})
+
+//////////////// Set language to localStorage
+
+// function setLocalStorage() {
+//   localStorage.setItem('lang', chosenLang);
+// }
+// window.addEventListener('beforeunload', setLocalStorage)
+
+//////////////// Take language from localStorage
+
+function getLocalStorage() {
+
+  if (localStorage.getItem('lang')) {
+    const lang = localStorage.getItem('lang');
+    getTranslate(lang);
+
+    if (lang === 'ru') {
+      navLanguages.forEach((a) => {
+        a.parentElement.classList.remove('active-lang')
+      })
+      document.getElementById('ru').classList.add('active-lang')
+    }
+  }
+}
+window.addEventListener('load', getLocalStorage)

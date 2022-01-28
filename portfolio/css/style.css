@@ -27,25 +27,29 @@
   --regular-font: 20px;
 }
 
-html {
+html.dark {
   scroll-behavior: smooth;
-  background-color: var(--bg-dark);
-  transition: all 0.2s ease;
 }
 
 html.light {
   background-color: var(--white);
 }
 
+html.dark {
+  background-color: var(--bg-dark);
+}
+
 body {
   font-family: var(--basic-font);
   font-size: var(--regular-font);
-  color: var(--white);
-  transition: all 0.2s ease;
 }
 
 .light body {
   color: var(--bg-dark);
+}
+
+.dark body {
+  color: var(--white);
 }
 
 .container {
@@ -63,6 +67,10 @@ body {
   align-items: center;
 }
 
+.light .logo {
+  filter: brightness(0);
+}
+
 .logo {
   width: 50px;
   height: 50px;
@@ -70,10 +78,6 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   transition: all 0.2s ease;
-}
-
-.light .logo {
-  filter: brightness(0);
 }
 
 .logo:hover {
@@ -110,35 +114,41 @@ body {
 
 .nav-list .nav-link {
   padding: 0px 10px;
-  transition: all 0.2s ease;
 }
 
 .language-nav-list .nav-item {
   padding: 0 0 0 11px;
-  transition: all 0.2s ease;
-}
-
-.nav-item a {
-  color: var(--white);
-  text-decoration: none;
-  transition: all 0.2s ease;
 }
 
 .light .nav-item a {
   color: var(--bg-dark);
 }
 
-.nav-item a:hover {
-  color: var(--gold);
+.dark .nav-item a {
+  color: var(--white);
 }
 
-.active-lang a {
+.nav-item a {
+  text-decoration: none;
+}
+
+.nav-item a:hover {
   color: var(--gold);
   transition: all 0.2s ease;
 }
 
 .light .active-lang a {
   color: var(--white);
+  transition: all 0.2s ease;
+}
+
+.dark .active-lang a {
+  color: var(--gold);
+  transition: all 0.2s ease;
+}
+
+.active-lang a {
+  transition: all 0.2s ease;
 }
 
 .theme-toggle {
@@ -171,10 +181,17 @@ body {
   display: block;
 }
 
+.light .header-container::before {
+  background-image: url("../assets/img/light-bg.jpg");
+}
+
+.dark .header-container::before {
+  background-image: url("../assets/img/bg.jpg");
+}
+
 .header-container::before {
   position: absolute;
   content: "";
-  background-image: url("../assets/img/bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
   min-width: 1440px;
@@ -182,10 +199,6 @@ body {
   top: 0;
   margin-left: -20px;
   z-index: -1;
-}
-
-.light .header-container::before {
-  background-image: url("../assets/img/light-bg.jpg");
 }
 
 .hero-container {
@@ -496,7 +509,7 @@ button {
   transition: all 0.2s ease;
 }
 
-.contact-form-wrapper {
+.light .contact-form-wrapper {
   background-image: url("../assets/img/light-contacts.jpg");
 }
 
