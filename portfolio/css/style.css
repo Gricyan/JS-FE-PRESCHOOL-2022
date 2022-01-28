@@ -183,10 +183,12 @@ body {
 
 .light .header-container::before {
   background-image: url("../assets/img/light-bg.jpg");
+  box-shadow: 0px 20px 30px var(--white), 0px -30px 30px var(--gold);
 }
 
 .dark .header-container::before {
   background-image: url("../assets/img/bg.jpg");
+  box-shadow: 0px 20px 30px var(--bg-dark);
 }
 
 .header-container::before {
@@ -207,6 +209,7 @@ body {
 }
 
 .hero-legend {
+  display: block;
   width: 480px;
   padding-top: 145px;
   padding-left: 60px;
@@ -223,14 +226,16 @@ h1 {
 }
 
 button {
-  padding: 15px 0;
+  position: relative;
   border: 2px solid var(--gold);
   font-family: inherit;
   cursor: pointer;
+  overflow: hidden;
   transition: all 0.2s ease;
 }
 
 .button {
+  position: relative;
   width: 220px;
 }
 
@@ -874,5 +879,19 @@ textarea {
   }
   .price-item {
     width: 80%;
+  }
+}
+
+@-webkit-keyframes scaling {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
+
+@keyframes scaling {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3);
   }
 }

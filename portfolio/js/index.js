@@ -172,3 +172,5 @@ function getLocalStorage() {
   }
 }
 window.addEventListener('load', getLocalStorage)
+
+/////////////////Button click effect
