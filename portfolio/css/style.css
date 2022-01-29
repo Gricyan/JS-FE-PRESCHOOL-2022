@@ -48,7 +48,7 @@ html.dark {
 }
 
 .loader {
-  position: absolute;
+  position: sticky;
   display: flex;
   justify-content: center;
   align-items: center;
