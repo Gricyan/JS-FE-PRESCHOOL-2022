@@ -27,7 +27,7 @@
   --regular-font: 20px;
 }
 
-html.dark {
+html {
   scroll-behavior: smooth;
 }
 
