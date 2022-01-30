@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light dark">
 
 <head>
   <meta charset="UTF-8">
@@ -8,11 +8,19 @@
   <title>Portfolio</title>
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/click.css">
   <link rel="stylesheet" href="./css/hamburger.css">
   <link rel="icon" href="./assets/img/favicon.ico">
+  <script src="./js/preloader.js"></script>
 </head>
 
 <body>
+  <div class="loader">
+    <div class="bounce"></div>
+    <div class="bounce"></div>
+    <div class="bounce"></div>
+  </div>
+
   <header>
     <div class="container">
       <div class="header-container">
@@ -23,21 +31,25 @@
         <div class="nav-container">
           <nav class="nav">
             <ul class="nav-list">
-              <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-              <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-              <li class="nav-item"><a href="#video" class="nav-link">Video</a></li>
-              <li class="nav-item"><a href="#price" class="nav-link">Price</a></li>
-              <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
+              <li class="nav-item"><a href="#skills" class="nav-link" data-i18="skills">Skills</a></li>
+              <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18="portfolio">Portfolio</a></li>
+              <li class="nav-item"><a href="#video" class="nav-link" data-i18="video">Video</a></li>
+              <li class="nav-item"><a href="#price" class="nav-link" data-i18="price">Price</a></li>
+              <li class="nav-item"><a href="#contacts" class="nav-link" data-i18="contacts">Contacts</a></li>
             </ul>
           </nav>
         </div>
         <nav class="language-nav">
           <ul class="language-nav-list">
-            <li class="nav-item active-gold"><a href="#" class="nav-link">en</a></li>
+            <li id="en" class="nav-item active-lang"><a href="#" class="lang-link" data-lang="en">EN</a></li>
             <li class="nav-item">/</li>
-            <li class="nav-item"><a href="#" class="nav-link">ru</a></li>
+            <li id="ru" class="nav-item"><a href="#" class="lang-link" data-lang="ru">RU</a></li>
           </ul>
         </nav>
+
+        <a href="#" class="theme-toggle">
+          <div class="icon-toggle"></div>
+        </a>
 
         <div class="hamburger-container">
           <div class="hamburger" id="hamburger-menu">
@@ -54,64 +66,59 @@
     <div class="container">
       <section id="hero" class="section hero-container">
         <div class="hero-legend">
-          <h1>Alexa Rise</h1>
-          <p>Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
-          <button class="btn-gold">Hire me</button>
+          <h1 data-i18="hero-title">Alexa Rise</h1>
+          <p data-i18="hero-text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
+          <button class="btn-gold button"><span data-i18="hire">Hire me</span></button>
         </div>
       </section>
       <section id="skills" class="section skills-container">
         <div class="title-wrapper">
-          <h2 class="section-title">Skills</h2>
+          <h2 class="section-title" data-i18="skills">Skills</h2>
         </div>
         <div class="skills-items">
           <div class="skill-item">
-            <p class="skill-header">Digital photography</p>
-            <p class="skill-feature">High-quality photos in the studio and on the nature</p>
+            <p class="skill-header" data-i18="skill-title-1">Digital photography</p>
+            <p class="skill-feature" data-i18="skill-text-1">High-quality photos in the studio and on the nature</p>
           </div>
           <div class="skill-item">
-            <p class="skill-header">Video shooting</p>
-            <p class="skill-feature">Capture your moments so that they always stay with you</p>
+            <p class="skill-header" data-i18="skill-title-2">Video shooting</p>
+            <p class="skill-feature" data-i18="skill-text-2">Capture your moments so that they always stay with you</p>
           </div>
           <div class="skill-item">
-            <p class="skill-header">Retouch</p>
-            <p class="skill-feature">I strive to make photography surpass reality</p>
+            <p class="skill-header" data-i18="skill-title-3">Retouch</p>
+            <p class="skill-feature" data-i18="skill-text-3">I strive to make photography surpass reality</p>
           </div>
           <div class="skill-item">
-            <p class="skill-header">Audio</p>
-            <p class="skill-feature">Professional sounds recording for video, advertising, portfolio</p>
+            <p class="skill-header" data-i18="skill-title-4">Audio</p>
+            <p class="skill-feature" data-i18="skill-text-4">Professional sounds recording for video, advertising, portfolio</p>
           </div>
         </div>
       </section>
+
       <section id="portfolio" class="section portfolio-container">
         <div class="title-wrapper">
-          <h2 class="section-title">Portfolio</h2>
+          <h2 class="section-title" data-i18="portfolio">Portfolio</h2>
         </div>
+
         <div class="portfolio-buttons">
-          <div class="portfolio-button-item">
-            <button class="btn-black">Winter</button>
-          </div>
-          <div class="portfolio-button-item">
-            <button class="btn-black">Spring</button>
-          </div>
-          <div class="portfolio-button-item">
-            <button class="btn-black">Summer</button>
-          </div>
-          <div class="portfolio-button-item">
-            <button class="btn-gold">Autumn</button>
-          </div>
+          <button class="portfolio-btn" data-season="winter"><span data-i18="winter">Winter</span></button>
+          <button class="portfolio-btn" data-season="spring"><span data-i18="spring">Spring</span></button>
+          <button class="portfolio-btn" data-season="summer"><span data-i18="summer">Summer</span></button>
+          <button class="portfolio-btn active-btn" data-season="autumn"><span  data-i18="autumn">Autumn</span></button>
         </div>
+
         <div class="portfolio-gallery">
-          <div class="gallery-item"><img src="./assets/img/gallery/img-autumn-1.jpg" alt=""></div>
-          <div class="gallery-item"><img src="./assets/img/gallery/img-autumn-2.jpg" alt=""></div>
-          <div class="gallery-item"><img src="./assets/img/gallery/img-autumn-3.jpg" alt=""></div>
-          <div class="gallery-item"><img src="./assets/img/gallery/img-autumn-4.jpg" alt=""></div>
-          <div class="gallery-item"><img src="./assets/img/gallery/img-autumn-5.jpg" alt=""></div>
-          <div class="gallery-item"><img src="./assets/img/gallery/img-autumn-6.jpg" alt=""></div>
+          <div class="gallery-item"><img src="./assets/img/gallery/autumn/1.jpg" alt="portfolio-image" class="portfolio-image"></div>
+          <div class="gallery-item"><img src="./assets/img/gallery/autumn/2.jpg" alt="portfolio-image" class="portfolio-image"></div>
+          <div class="gallery-item"><img src="./assets/img/gallery/autumn/3.jpg" alt="portfolio-image" class="portfolio-image"></div>
+          <div class="gallery-item"><img src="./assets/img/gallery/autumn/4.jpg" alt="portfolio-image" class="portfolio-image"></div>
+          <div class="gallery-item"><img src="./assets/img/gallery/autumn/5.jpg" alt="portfolio-image" class="portfolio-image"></div>
+          <div class="gallery-item"><img src="./assets/img/gallery/autumn/6.jpg" alt="portfolio-image" class="portfolio-image"></div>
         </div>
       </section>
       <section id="video" class="section video-container">
         <div class="title-wrapper">
-          <h2 class="section-title">Video</h2>
+          <h2 class="section-title" data-i18="video">Video</h2>
         </div>
         <div class="video-player">
           <img src="./assets/img/video-player-image.jpg" alt="">
@@ -120,44 +127,44 @@
       </section>
       <section id="price" class="section price-container">
         <div class="title-wrapper">
-          <h2 class="section-title">Price</h2>
+          <h2 class="section-title" data-i18="price">Price</h2>
         </div>
         <div class="price-items">
           <div class="price-item">
             <h3>Standard</h3>
             <h4 class="price">500 $</h4>
             <ul>
-              <li>One location</li>
-              <li>120 photos in color</li>
-              <li>12 photos in retouch</li>
-              <li>Readiness 2-3 weeks</li>
-              <li>Make up, visage</li>
+              <li data-i18="price-description-1-li-1">One location</li>
+              <li data-i18="price-description-1-li-2">120 photos in color</li>
+              <li data-i18="price-description-1-li-3">12 photos in retouch</li>
+              <li data-i18="price-description-1-li-4">Readiness 2-3 weeks</li>
+              <li data-i18="price-description-1-li-5">Make up, visage</li>
             </ul>
-            <button class="btn-gold">Order shooting</button>
+            <button class="btn-gold button"><span data-i18="order">Order shooting</span></button>
           </div>
           <div class="price-item">
             <h3>Premium</h3>
             <h4 class="price">700 $</h4>
             <ul>
-              <li>One or two locations</li>
-              <li>200 photos in color</li>
-              <li>20 photos in retouch</li>
-              <li>Readiness 1-2 weeks</li>
-              <li>Make up, visage</li>
+              <li data-i18="price-description-2-li-1">One or two locations</li>
+              <li data-i18="price-description-2-li-2">200 photos in color</li>
+              <li data-i18="price-description-2-li-3">20 photos in retouch</li>
+              <li data-i18="price-description-2-li-4">Readiness 1-2 weeks</li>
+              <li data-i18="price-description-2-li-5">Make up, visage</li>
             </ul>
-            <button class="btn-gold">Order shooting</button>
+            <button class="btn-gold button"><span data-i18="order">Order shooting</span></button>
           </div>
           <div class="price-item">
             <h3>Gold</h3>
             <h4 class="price">1000 $</h4>
             <ul>
-              <li>Three locations or more</li>
-              <li>300 photos in color</li>
-              <li>30 photos in retouch</li>
-              <li>Readiness 1 week</li>
-              <li>Make up, visage, hairstyle</li>
+              <li data-i18="price-description-3-li-1">Three locations or more</li>
+              <li data-i18="price-description-3-li-2">300 photos in color</li>
+              <li data-i18="price-description-3-li-3">30 photos in retouch</li>
+              <li data-i18="price-description-3-li-4">Readiness 1 week</li>
+              <li data-i18="price-description-3-li-5">Make up, visage, hairstyle</li>
             </ul>
-            <button class="btn-gold">Order shooting</button>
+            <button class="btn-gold button"><span data-i18="order">Order shooting</span></button>
           </div>
         </div>
       </section>
@@ -165,12 +172,12 @@
         <div class="contact-form-wrapper"></div>
         <div class="contact-container">
           <div class="contact-form-container">
-            <h2 class="contact-title">Contact me</h2>
+            <h2 class="contact-title" data-i18="contact-me">Contact me</h2>
             <form class="contact-form" action="#" method="post">
               <input type="email" name="email" id="email" placeholder="E-mail">
-              <input type="tel" name="phone" id="phone" placeholder="Phone">
-              <textarea id="message" name="message" rows="4" placeholder="Message"></textarea>
-              <button type="submit" class="btn-gold">Send message</button>
+              <input type="tel" name="phone" id="phone" placeholder="Phone" data-i18="phone">
+              <textarea id="message" name="message" rows="4" placeholder="Message" data-i18="message"></textarea>
+              <button type="submit" class="btn-gold button"><span data-i18="send-message">Send message</span></button>
             </form>
           </div>
         </div>
@@ -209,7 +216,8 @@
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-  <script src="./js/index.js"></script>
+  <script type="module" src="./js/index.js"></script>
+  <script type="module" src="./js/click.js"></script>
 </body>
 
 </html>
