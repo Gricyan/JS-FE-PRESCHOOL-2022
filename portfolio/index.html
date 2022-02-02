@@ -121,8 +121,22 @@
           <h2 class="section-title" data-i18="video">Video</h2>
         </div>
         <div class="video-player">
-          <img src="./assets/img/video-player-image.jpg" alt="">
+          <div class="poster"></div>
+          <video class="player" src="./assets/video/video.mp4"></video>
           <button class="player-btn"></button>
+          <div class="video-control-panel">
+            <button class="toggle-play-pause button-play">
+            </button>
+            <div class="curr-time video-time">00:03</div>
+            <input class="progress-video range" type="range" name="progress-bar-video" id="progress-bar-video" value="0" min="0" max="100" step="0.1" style="background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(36, 128, 158) 0%, rgb(36, 128, 158) 8.57143%, rgb(179, 179, 179) 8.57143%, rgb(179, 179, 179) 100%) repeat scroll 0% 0%;">
+            <div class="duration-time video-time">00:35</div>
+            <button class="toggle-volume toggle-volume-volume">
+            </button>
+            <input class="range-volume range" type="range" name="volume" id="volume" value="100" min="0" max="100" step="1" style="background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(36, 128, 158) 0%, rgb(36, 128, 158) 8.57143%, rgb(179, 179, 179) 8.57143%, rgb(179, 179, 179) 100%) repeat scroll 0% 0%;">
+            <button class="button-full-screen">
+            </button>
+          </div>
+
         </div>
       </section>
       <section id="price" class="section price-container">
