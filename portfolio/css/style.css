@@ -20,22 +20,39 @@
   --bg-dark: #000000;
   --gold: #bdae82;
   --white: #ffffff;
+  --light-grey: #c8c8c8;
   --header-font: 'Merriweather', serif;
   --basic-font: 'Inter', sans-serif;
   --bold-font: 60px;
   --h2-font: 40px;
   --regular-font: 20px;
+  --small-font: 16px;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 
 html {
   scroll-behavior: smooth;
 }
 
 html.light {
+  scroll-behavior: smooth;
   background-color: var(--white);
 }
 
 html.dark {
+  scroll-behavior: smooth;
   background-color: var(--bg-dark);
 }
 
@@ -483,35 +500,6 @@ button {
   transition: all 0.2s ease;
 }
 
-.video-player {
-  position: relative;
-  margin: 44px auto 30px;
-}
-
-.player-btn {
-  position: absolute;
-  padding: 0;
-  width: 130px;
-  height: 130px;
-  border: none;
-  outline: none;
-  background: transparent;
-  background-image: url('../assets/svg/player-btn.svg');
-  background-repeat: no-repeat;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -51%);
-  -moz-transform: translate(-50%, -51%);
-  -ms-transform: translate(-50%, -51%);
-  -o-transform: translate(-50%, -51%);
-  transform: translate(-50%, -51%);
-  transition: all 0.2s ease;
-}
-
-.player-btn:hover {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-}
-
 .price-items {
   display: flex;
   justify-content: space-between;
@@ -610,7 +598,7 @@ input:-webkit-autofill:active {
   transition: all 0.2s ease;
 }
 
-input {
+.contact-form input {
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid var(--gold);
   width: 426px;
@@ -852,14 +840,24 @@ textarea {
   .video-container {
     padding-top: 21px;
   }
-  .video-player {
-    margin: 46px -60px 0px -60px;
-    overflow: hidden;
+  .player-container {
+    width: calc(100% + 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -40px;
+    font-size: var(--small-font);
   }
-  .player-btn {
-    width: 65px;
-    height: 65px;
-    background-size: contain;
+  .progress {
+    width: 45%;
+  }
+  .play-btn,
+  .volume-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  .speed-btn {
+    width: 30px;
   }
   .price-container {
     padding-top: 50px;
