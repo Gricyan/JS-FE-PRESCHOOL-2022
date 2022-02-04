@@ -41,6 +41,9 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+
+html {
+  scroll-behavior: smooth;
 }
 
 html.light {
