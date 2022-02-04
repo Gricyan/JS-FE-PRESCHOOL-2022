@@ -1,0 +1,319 @@
+/* PLAYER */
+
+.player-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  user-select: none;
+  overflow: hidden;
+}
+
+.player-btn {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-image: url('../assets/svg/icon-play.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 2;
+}
+
+.player-btn:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(0deg);
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: rotate(90deg) scale(3);
+}
+
+.player video {
+  width: 100%;
+}
+
+video[poster] {
+  object-fit: cover;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  padding: 0 20px;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateY(100%);
+  transition: all 0.5s;
+}
+
+.player:hover .controls {
+  transform: translateY(0%);
+}
+
+.time {
+  width: 5%;
+  margin: auto;
+  text-align: center;
+  color: var(--white);
+}
+
+.progress {
+  position: relative;
+  height: 8px;
+  width: 55%;
+  background: rgba(60, 60, 60, 0.6);
+  margin: auto;
+  border-radius: 6px;
+  transition: height 0.1s ease-in-out;
+}
+
+.progress:hover {
+  height: 10px;
+}
+
+.progress-filled {
+  background: var(--gold);
+  width: 0%;
+  height: 100%;
+  border-radius: 6px;
+  transition: all 0.1s;
+}
+
+.controls-main {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.volume {
+  display: flex;
+  width: 15%;
+  margin: auto;
+  align-items: center;
+}
+
+.volume-btn {
+  margin-right: 10%;
+}
+
+.volume-btn #volume-off,
+.volume-btn #volume-high {
+  opacity: 0;
+}
+
+.volume-btn.loud #volume-high {
+  opacity: 1;
+}
+
+.volume-btn.muted #volume-off {
+  opacity: 1;
+}
+
+.volume-btn.muted #volume-high,
+.volume-btn.muted #volume-low {
+  opacity: 0;
+}
+
+.volume-slider {
+  height: 8px;
+  width: 100%;
+  background: rgba(60, 60, 60, 0.6);
+  ;
+  border-radius: 6px;
+  position: relative;
+}
+
+.volume-filled {
+  background: var(--white);
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.2s ease-in-out;
+}
+
+.volume-filled:hover,
+.play-btn:hover.play-btn:before,
+.play-btn:hover.play-btn:after {
+  background: var(--gold);
+  transition: 0.3s ease;
+}
+
+.volume-btn svg,
+.fullscreen svg,
+.speed-btn svg {
+  transition: 0.3s ease;
+}
+
+.volume-btn svg:hover,
+.fullscreen svg:hover,
+.speed-btn:hover svg {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  transform: scale(1.1);
+}
+
+.play-btn {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: auto;
+  transform: rotate(-90deg) scale(0.8);
+  transition: -webkit-clip-path 0.3s ease-in 0.1s, shape-inside 0.3s ease-in 0.1s, transform 0.4s cubic-bezier(0.85, -0.25, 0.25, 1.425);
+}
+
+.play-btn.paused {
+  transform: rotate(0deg);
+}
+
+.play-btn:before,
+.play-btn:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: inherit;
+}
+
+.play-btn:before {
+  -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 40%, 0 40%);
+  clip-path: polygon(0 10%, 100% 10%, 100% 40%, 0 40%);
+  -webkit-shape-inside: polygon(0 10%, 100% 10%, 100% 40%, 0 40%);
+  -moz-shape-inside: polygon(0 10%, 100% 10%, 100% 40%, 0 40%);
+  background-color: white;
+}
+
+.play-btn:after {
+  -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 90%, 0 90%);
+  clip-path: polygon(0 60%, 100% 60%, 100% 90%, 0 90%);
+  -webkit-shape-inside: polygon(0 60%, 100% 60%, 100% 90%, 0 90%);
+  -moz-shape-inside: polygon(0 60%, 100% 60%, 100% 90%, 0 90%);
+  background-color: white;
+}
+
+.play-btn.paused:before {
+  -webkit-clip-path: polygon(10% 0, 90% 51%, 90% 51%, 10% 51%);
+  clip-path: polygon(10% 0, 90% 51%, 90% 51%, 10% 51%);
+  -webkit-shape-inside: polygon(0 0, 100% 51%, 100% 51%, 0 51%);
+  -moz-shape-inside: polygon(0 0, 100% 51%, 100% 51%, 0 51%);
+  background-color: white;
+}
+
+.play-btn.paused:after {
+  -webkit-clip-path: polygon(10% 49.5%, 80% 49.5%, 90% 49.5%, 10% 100%);
+  clip-path: polygon(10% 49.5%, 80% 49.5%, 90% 49.5%, 10% 100%);
+  -webkit-shape-inside: polygon(10% 49.5%, 80% 49.5%, 90% 49.5%, 10% 100%);
+  -moz-shape-inside: polygon(10% 49.5%, 80% 49.5%, 90% 49.5%, 10% 100%);
+  background-color: white;
+}
+
+button:focus {
+  outline: none;
+}
+
+.speed {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all .1s ease-in-out;
+}
+
+.speed.show {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.speed-list {
+  position: absolute;
+  display: flex;
+  right: -20px;
+  flex-direction: column;
+  bottom: 10px;
+  padding: 10px 33px 10px 10px;
+  padding-inline-start: 0px;
+  list-style: none;
+  text-align: right;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top-left-radius: 10px;
+}
+
+.speed-list li {
+  color: var(--white);
+  padding: 5px 5px 5px 20px;
+  cursor: default;
+}
+
+.speed-list li:hover,
+.speed-list li.active {
+  color: var(--gold);
+}
+
+.speed-btn,
+.fullscreen {
+  margin: auto;
+}
+
+.speed-btn {
+  display: flex;
+  width: 35px;
+}
+
+.speed-btn svg {
+  max-width: 35px;
+}
+
+
+/*   the same in style */
+
+@media (max-width: 768px) {
+  .player-container {
+    width: calc(100% + 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px -40px 0;
+    font-size: var(--small-font);
+  }
+  .progress {
+    width: 45%;
+  }
+  .play-btn,
+  .volume-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  .speed-btn {
+    width: 30px;
+  }
+  .player-btn {
+    cursor: none;
+  }
+  .hidden {
+    transform: rotate(90deg) scale(2);
+  }
+}
