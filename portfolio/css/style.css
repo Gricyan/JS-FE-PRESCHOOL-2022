@@ -840,7 +840,6 @@ textarea {
     justify-content: center;
     margin: 0 -40px;
     font-size: var(--small-font);
-    color: var(--white);
   }
   .progress {
     width: 45%;
