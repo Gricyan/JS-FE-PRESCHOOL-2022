@@ -1,4 +1,11 @@
 // Preloader
+/*
+
+<div class="loader">
+  <div class="bounce"></div>
+  <div class="bounce"></div>
+  <div class="bounce"></div>
+</div>
 
 setTimeout(function() {
   document.querySelector("html").classList.add("loader")
@@ -10,3 +17,5 @@ setTimeout(function() {
 setTimeout(function() {
   document.querySelector(".loader").style.display = "none"
 }, 3000);
+
+*/
