@@ -399,10 +399,6 @@ button {
   background-position: center 24px;
 }
 
-.light .skill-item:nth-child(n) {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-}
-
 .skill-item:nth-child(1) {
   background-image: url('../assets/svg/camera.svg');
 }
@@ -844,6 +840,7 @@ textarea {
     justify-content: center;
     margin: 0 -40px;
     font-size: var(--small-font);
+    color: var(--white);
   }
   .progress {
     width: 45%;
