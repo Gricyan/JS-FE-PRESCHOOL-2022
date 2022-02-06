@@ -17,7 +17,7 @@
 <body>
 
   <header>
-    <div class="container">
+    <<<<<<< HEAD <div class="container">
       <div class="header-container">
         <a href="#" class="header-logo">
           <div class="logo"></div>
@@ -38,23 +38,48 @@
             <li id="en" class="nav-item active-lang"><a href="#" class="lang-link" data-lang="en">EN</a></li>
             <li class="nav-item">/</li>
             <li id="ru" class="nav-item"><a href="#" class="lang-link" data-lang="ru">RU</a></li>
-          </ul>
-        </nav>
+            =======
 
-        <a href="#" class="theme-toggle">
-          <div class="icon-toggle"></div>
-        </a>
+            <div class="header-container">
+              <a href="#" class="header-logo">
+                <div class="logo"></div>
+              </a>
+              <div class="nav-container">
+                <nav class="nav">
+                  <ul class="nav-list">
+                    <li class="nav-item"><a href="#skills" class="nav-link" data-i18="skills">Skills</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18="portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a href="#video" class="nav-link" data-i18="video">Video</a></li>
+                    <li class="nav-item"><a href="#price" class="nav-link" data-i18="price">Price</a></li>
+                    <li class="nav-item"><a href="#contacts" class="nav-link" data-i18="contacts">Contacts</a></li>
+                    >>>>>>> portfolio-part3
+                  </ul>
+                </nav>
+              </div>
+              <nav class="language-nav">
+                <ul class="language-nav-list">
+                  <li id="en" class="nav-item active-lang"><a href="#" class="lang-link" data-lang="en">EN</a></li>
+                  <li class="nav-item">/</li>
+                  <li id="ru" class="nav-item"><a href="#" class="lang-link" data-lang="ru">RU</a></li>
+                </ul>
+              </nav>
 
-        <div class="hamburger-container">
-          <div class="hamburger" id="hamburger-menu">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-          </div>
-        </div>
+              <a href="#" class="theme-toggle">
+                <div class="icon-toggle">
+                  <img class="sun" src="./assets/svg/sun.svg" alt="light theme">
+                  <img class="moon" src="./assets/svg/moon.svg" alt="dark theme">
+                </div>
+              </a>
 
-      </div>
-    </div>
+              <div class="hamburger-container">
+                <div class="hamburger" id="hamburger-menu">
+                  <span class="line"></span>
+                  <span class="line"></span>
+                  <span class="line"></span>
+                </div>
+              </div>
+
+            </div>
   </header>
   <main>
     <div class="container">
@@ -62,9 +87,10 @@
         <div class="hero-legend">
           <h1 data-i18="hero-title">Alexa Rise</h1>
           <p data-i18="hero-text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
-          <button class="btn-gold button"><span data-i18="hire">Hire me</span></button>
+          <button class="btn-gold button"><a href="#contacts"><span data-i18="hire">Hire me</span></a></button>
         </div>
       </section>
+
       <section id="skills" class="section skills-container">
         <div class="title-wrapper">
           <h2 class="section-title" data-i18="skills">Skills</h2>
@@ -220,7 +246,7 @@
         <div class="contact-container">
           <div class="contact-form-container">
             <h2 class="contact-title" data-i18="contact-me">Contact me</h2>
-            <form class="contact-form" action="#" method="post">
+            <form class="contact-form" action="#">
               <input type="email" name="email" id="email" placeholder="E-mail">
               <input type="tel" name="phone" id="phone" placeholder="Phone" data-i18="phone">
               <textarea id="message" name="message" rows="4" placeholder="Message" data-i18="message"></textarea>
@@ -229,6 +255,9 @@
           </div>
         </div>
       </section>
+
+
+
     </div>
   </main>
   <footer>
@@ -262,6 +291,9 @@
       </div>
     </div>
   </footer>
+  <a id="go-top-box" href="#">
+    <div class="go-top"></div>
+  </a>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
   <script type="module" src="./js/index.js"></script>
   <script src="./js/click.js"></script>
