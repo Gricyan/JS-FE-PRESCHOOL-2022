@@ -12,74 +12,57 @@
   <link rel="stylesheet" href="./css/click.css">
   <link rel="stylesheet" href="./css/hamburger.css">
   <link rel="icon" href="./assets/img/favicon.ico">
+  <script src="./js/preloader.js"></script>
 </head>
 
 <body>
+  <div class="loader">
+    <div class="bounce"></div>
+    <div class="bounce"></div>
+    <div class="bounce"></div>
+  </div>
 
   <header>
-    <<<<<<< HEAD <div class="container">
-      <div class="header-container">
-        <a href="#" class="header-logo">
-          <div class="logo"></div>
-        </a>
-        <div class="nav-container">
-          <nav class="nav">
-            <ul class="nav-list">
-              <li class="nav-item"><a href="#skills" class="nav-link" data-i18="skills">Skills</a></li>
-              <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18="portfolio">Portfolio</a></li>
-              <li class="nav-item"><a href="#video" class="nav-link" data-i18="video">Video</a></li>
-              <li class="nav-item"><a href="#price" class="nav-link" data-i18="price">Price</a></li>
-              <li class="nav-item"><a href="#contacts" class="nav-link" data-i18="contacts">Contacts</a></li>
-            </ul>
-          </nav>
+
+    <div class="header-container">
+      <a href="#" class="header-logo">
+        <div class="logo"></div>
+      </a>
+      <div class="nav-container">
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#skills" class="nav-link" data-i18="skills">Skills</a></li>
+            <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18="portfolio">Portfolio</a></li>
+            <li class="nav-item"><a href="#video" class="nav-link" data-i18="video">Video</a></li>
+            <li class="nav-item"><a href="#price" class="nav-link" data-i18="price">Price</a></li>
+            <li class="nav-item"><a href="#contacts" class="nav-link" data-i18="contacts">Contacts</a></li>
+          </ul>
+        </nav>
+      </div>
+      <nav class="language-nav">
+        <ul class="language-nav-list">
+          <li id="en" class="nav-item active-lang"><a href="#" class="lang-link" data-lang="en">EN</a></li>
+          <li class="nav-item">/</li>
+          <li id="ru" class="nav-item"><a href="#" class="lang-link" data-lang="ru">RU</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="theme-toggle">
+        <div class="icon-toggle">
+          <img class="sun" src="./assets/svg/sun.svg" alt="light theme">
+          <img class="moon" src="./assets/svg/moon.svg" alt="dark theme">
         </div>
-        <nav class="language-nav">
-          <ul class="language-nav-list">
-            <li id="en" class="nav-item active-lang"><a href="#" class="lang-link" data-lang="en">EN</a></li>
-            <li class="nav-item">/</li>
-            <li id="ru" class="nav-item"><a href="#" class="lang-link" data-lang="ru">RU</a></li>
-            =======
+      </a>
 
-            <div class="header-container">
-              <a href="#" class="header-logo">
-                <div class="logo"></div>
-              </a>
-              <div class="nav-container">
-                <nav class="nav">
-                  <ul class="nav-list">
-                    <li class="nav-item"><a href="#skills" class="nav-link" data-i18="skills">Skills</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18="portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a href="#video" class="nav-link" data-i18="video">Video</a></li>
-                    <li class="nav-item"><a href="#price" class="nav-link" data-i18="price">Price</a></li>
-                    <li class="nav-item"><a href="#contacts" class="nav-link" data-i18="contacts">Contacts</a></li>
-                    >>>>>>> portfolio-part3
-                  </ul>
-                </nav>
-              </div>
-              <nav class="language-nav">
-                <ul class="language-nav-list">
-                  <li id="en" class="nav-item active-lang"><a href="#" class="lang-link" data-lang="en">EN</a></li>
-                  <li class="nav-item">/</li>
-                  <li id="ru" class="nav-item"><a href="#" class="lang-link" data-lang="ru">RU</a></li>
-                </ul>
-              </nav>
+      <div class="hamburger-container">
+        <div class="hamburger" id="hamburger-menu">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </div>
 
-              <a href="#" class="theme-toggle">
-                <div class="icon-toggle">
-                  <img class="sun" src="./assets/svg/sun.svg" alt="light theme">
-                  <img class="moon" src="./assets/svg/moon.svg" alt="dark theme">
-                </div>
-              </a>
-
-              <div class="hamburger-container">
-                <div class="hamburger" id="hamburger-menu">
-                  <span class="line"></span>
-                  <span class="line"></span>
-                  <span class="line"></span>
-                </div>
-              </div>
-
-            </div>
+    </div>
   </header>
   <main>
     <div class="container">
@@ -136,11 +119,16 @@
           <div class="gallery-item"><img src="./assets/img/gallery/autumn/6.jpg" alt="portfolio-image" class="portfolio-image"></div>
         </div>
       </section>
-      <section id="video" class="section video-container">
-        <div class="title-wrapper">
-          <h2 class="section-title" data-i18="video">Video</h2>
-        </div>
+    </div>
+    <div class="video-container">
 
+      <section id="video" class="section">
+
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="section-title" data-i18="video">Video</h2>
+          </div>
+        </div>
         <div class="player-container">
           <div class="player">
             <video id="video-file" poster="./assets/img/video-player-image.jpg" src="./assets/video/video.mp4"></video>
@@ -198,6 +186,8 @@
           </div>
         </div>
       </section>
+    </div>
+    <div class="container">
       <section id="price" class="section price-container">
         <div class="title-wrapper">
           <h2 class="section-title" data-i18="price">Price</h2>
