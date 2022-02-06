@@ -25,6 +25,7 @@
   --bold-font: 60px;
   --h2-font: 40px;
   --regular-font: 20px;
+  --small-font: 16px;
 }
 
 html {
@@ -546,35 +547,6 @@ button a:hover {
   transition: all 0.2s ease;
 }
 
-.video-player {
-  position: relative;
-  margin: 44px auto 30px;
-}
-
-.player-btn {
-  position: absolute;
-  padding: 0;
-  width: 130px;
-  height: 130px;
-  border: none;
-  outline: none;
-  background: transparent;
-  background-image: url('../assets/svg/player-btn.svg');
-  background-repeat: no-repeat;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -51%);
-  -moz-transform: translate(-50%, -51%);
-  -ms-transform: translate(-50%, -51%);
-  -o-transform: translate(-50%, -51%);
-  transform: translate(-50%, -51%);
-  transition: all 0.2s ease;
-}
-
-.player-btn:hover {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-}
-
 .price-items {
   display: flex;
   justify-content: space-between;
@@ -941,7 +913,7 @@ textarea {
   .nav {
     position: fixed;
     width: 620px;
-    height: 1024px;
+    height: 1200px;
     top: 0;
     right: -620px;
     background-color: var(--bg-dark);
@@ -989,7 +961,7 @@ textarea {
     min-height: 540px;
   }
   .title-wrapper {
-    width: 56%;
+    width: 90%;
   }
   .section-title::before {
     margin-right: 0.65em;
@@ -1025,19 +997,10 @@ textarea {
     justify-content: center;
   }
   .video-container {
-    padding-top: 21px;
-  }
-  .video-player {
-    margin: 46px -30px 0px -30px;
-    overflow: hidden;
-  }
-  .player-btn {
-    width: 65px;
-    height: 65px;
-    background-size: contain;
+    padding-top: 0px;
   }
   .price-container {
-    padding-top: 50px;
+    padding-top: 20px;
   }
   .price-items {
     flex-wrap: wrap;
@@ -1122,6 +1085,9 @@ textarea {
 }
 
 @media (max-width: 620px) {
+   :root {
+    --small-font: 14px;
+  }
   .nav.is-active {
     width: 100%;
   }
@@ -1140,6 +1106,7 @@ textarea {
     --bold-font: 1.6em;
     --h2-font: 32px;
     --regular-font: 16px;
+    --small-font: 12px;
   }
   .nav-list {
     margin-left: 25px;
@@ -1156,9 +1123,6 @@ textarea {
   }
   .gallery-item {
     padding-bottom: 20px;
-  }
-  .footer-container {
-    padding: 0 25px;
   }
 }
 
