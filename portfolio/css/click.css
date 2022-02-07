@@ -42,3 +42,23 @@ button span:hover {
     transform: scale(8);
   }
 }
+
+@media (max-width: 580px) {
+  button span {
+    width: 180px;
+  }
+  .portfolio-btn,
+  .button {
+    width: 180px
+  }
+}
+
+@media (max-width: 480px) {
+  button span {
+    width: 150px;
+  }
+  .portfolio-btn,
+  .button {
+    width: 150px
+  }
+}
