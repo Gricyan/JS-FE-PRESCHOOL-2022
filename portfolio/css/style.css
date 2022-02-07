@@ -146,21 +146,22 @@ header {
   margin: auto;
 }
 
-.light .logo {
-  filter: brightness(0);
-  transition: all 0.2s ease;
-}
-
 .logo {
   width: 50px;
   height: 50px;
   background-image: url('../assets/svg/logo.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  transition: all 0.2s ease;
   cursor: default;
+  transition: all 0.2s ease;
 }
 
+.light .logo {
+  background-image: url('../assets/svg/dark-logo.svg');
+  transition: all 0.2s ease;
+}
+
+.light .logo:hover,
 .logo:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
@@ -888,8 +889,7 @@ textarea {
     background-image: url("../assets/img/bg-small-dark.jpg");
   }
   .icon-toggle:hover img,
-  .hamburger:hover,
-  .logo:hover {
+  .hamburger:hover {
     filter: none;
   }
   .light .nav-item a:hover {
