@@ -16,10 +16,10 @@ button span:hover {
 
 .circle {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 150%;
+  height: 150%;
   position: absolute;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   transform: scale(0);
 }
@@ -60,5 +60,15 @@ button span:hover {
   .portfolio-btn,
   .button {
     width: 150px
+  }
+}
+
+@media (max-width: 375px) {
+  button span {
+    width: 130px;
+  }
+  .portfolio-btn,
+  .button {
+    width: 130px
   }
 }
