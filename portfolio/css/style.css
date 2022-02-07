@@ -168,6 +168,12 @@ header {
   margin-left: auto;
 }
 
+.nav-wrapper {
+  display: none;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
 .nav-list {
   display: inline-flex;
   justify-content: space-evenly;
@@ -910,6 +916,20 @@ textarea {
   .nav-container {
     overflow-x: hidden;
   }
+  .nav-wrapper.is-active {
+    display: block;
+    opacity: 0.8;
+    width: 100%;
+    min-height: 1200px;
+    position: absolute;
+    top: 0;
+  }
+  .dark .nav-wrapper.is-active {
+    background-color: var(--bg-dark);
+  }
+  .light .nav-wrapper.is-active {
+    background-color: var(--white);
+  }
   .nav {
     position: fixed;
     width: 620px;
@@ -1098,6 +1118,10 @@ textarea {
   .go-top {
     width: 30px;
     height: 30px;
+  }
+  .nav-wrapper.is-active {
+    display: none;
+    opacity: 0;
   }
 }
 

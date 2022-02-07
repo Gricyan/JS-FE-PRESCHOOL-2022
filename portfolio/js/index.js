@@ -34,10 +34,12 @@ import i18Obj from './translate.js';
 const hamburger = document.querySelector('.hamburger')
 const nav = document.querySelector('.nav')
 const navLinks = document.querySelectorAll('.nav-link')
+const navWrapper = document.querySelector('.nav-wrapper')
 
 function toggleMenu() {
   hamburger.classList.toggle('is-active')
   nav.classList.toggle('is-active')
+  navWrapper.classList.toggle('is-active')
 }
 
 hamburger.addEventListener('click', toggleMenu)
@@ -48,6 +50,7 @@ function closeMenu(event) {
   if (event.target.classList.contains('nav-link')) {
     hamburger.classList.remove('is-active')
     nav.classList.remove('is-active')
+    navWrapper.classList.remove('is-active')
   }
 }
 
