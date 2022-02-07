@@ -49,7 +49,7 @@ button span:hover {
   }
   .portfolio-btn,
   .button {
-    width: 180px
+    width: 180px;
   }
 }
 
@@ -59,7 +59,7 @@ button span:hover {
   }
   .portfolio-btn,
   .button {
-    width: 150px
+    width: 150px;
   }
 }
 
@@ -70,5 +70,6 @@ button span:hover {
   .portfolio-btn,
   .button {
     width: 130px;
+    font-size: var(--small-font);
   }
 }
