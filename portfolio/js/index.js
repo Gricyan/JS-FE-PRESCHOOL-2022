@@ -34,10 +34,12 @@ import i18Obj from './translate.js';
 const hamburger = document.querySelector('.hamburger')
 const nav = document.querySelector('.nav')
 const navLinks = document.querySelectorAll('.nav-link')
+const navWrapper = document.querySelector('.nav-wrapper')
 
 function toggleMenu() {
   hamburger.classList.toggle('is-active')
   nav.classList.toggle('is-active')
+  navWrapper.classList.toggle('is-active')
 }
 
 hamburger.addEventListener('click', toggleMenu)
@@ -48,6 +50,7 @@ function closeMenu(event) {
   if (event.target.classList.contains('nav-link')) {
     hamburger.classList.remove('is-active')
     nav.classList.remove('is-active')
+    navWrapper.classList.remove('is-active')
   }
 }
 
@@ -87,6 +90,34 @@ portfolioButtons.forEach((button) => {
 
 // Day-Night switcher
 
+if (localStorage.getItem('theme') === 'light') {
+  setTimeout(function() {
+    document.querySelector('.icon-toggle').classList.add('light-theme')
+    document.querySelector('.icon-toggle').classList.remove('dark-theme')
+  }, 1000);
+} else {
+  setTimeout(function() {
+    document.querySelector('.icon-toggle').classList.add('dark-theme')
+    document.querySelector('.icon-toggle').classList.remove('light-theme')
+  }, 1000);
+}
+
+function addLightClassToHtml() {
+  try {
+    if (localStorage.getItem('theme') === 'light') {
+      document.querySelector('html').classList.add('light')
+      document.querySelector('html').classList.remove('dark')
+      document.querySelector('.icon-toggle').classList.remove('dark-theme')
+      document.querySelector('.icon-toggle').classList.add('light-theme')
+    } else {
+      document.querySelector('html').classList.add('dark')
+      document.querySelector('html').classList.remove('light')
+      document.querySelector('.icon-toggle').classList.add('dark-theme')
+      document.querySelector('.icon-toggle').classList.remove('light-theme')
+    }
+  } catch (err) {}
+}
+
 document.querySelector('.theme-toggle').addEventListener('click', (event) => {
   event.preventDefault()
   if (localStorage.getItem('theme') === 'light') {
@@ -97,19 +128,19 @@ document.querySelector('.theme-toggle').addEventListener('click', (event) => {
   addLightClassToHtml()
 })
 
-function addLightClassToHtml() {
-  try {
-    if (localStorage.getItem('theme') === 'light') {
-      document.querySelector('html').classList.add('light')
-      document.querySelector('html').classList.remove('dark')
-      document.querySelector('.theme-toggle').classList.add('sun')
-    } else {
-      document.querySelector('html').classList.add('dark')
-      document.querySelector('html').classList.remove('light')
-      document.querySelector('.theme-toggle').classList.remove('sun')
-    }
-  } catch (err) {}
-}
+// function addLightClassToHtml() {
+//   try {
+//     if (localStorage.getItem('theme') === 'light') {
+//       document.querySelector('html').classList.add('light')
+//       document.querySelector('html').classList.remove('dark')
+//       document.querySelector('.theme-toggle').classList.add('sun')
+//     } else {
+//       document.querySelector('html').classList.add('dark')
+//       document.querySelector('html').classList.remove('light')
+//       document.querySelector('.theme-toggle').classList.remove('sun')
+//     }
+//   } catch (err) {}
+// }
 
 addLightClassToHtml()
 
@@ -172,3 +203,18 @@ function getLocalStorage() {
   }
 }
 window.addEventListener('load', getLocalStorage)
+
+// GO TOP buttons
+
+const btn = document.getElementById("go-top-box");
+
+window.addEventListener('scroll', function() {
+  'use strict';
+
+  if (scrollY > 1200) {
+    btn.style.display = "block"
+    btn.style.opacity = "1"
+  } else {
+    btn.style.display = "none"
+  }
+});

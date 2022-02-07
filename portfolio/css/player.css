@@ -1,11 +1,11 @@
 /* PLAYER */
 
 .player-container {
+  box-sizing: border-box;
+  max-width: 1440px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 80px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .player {
@@ -29,7 +29,6 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-color: transparent;
-  cursor: pointer;
   transition: 0.3s ease;
   z-index: 2;
 }
@@ -289,18 +288,7 @@ button:focus {
   max-width: 35px;
 }
 
-
-/*   the same in style */
-
-@media (max-width: 768px) {
-  .player-container {
-    width: calc(100% + 80px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 50px -40px 0;
-    font-size: var(--small-font);
-  }
+@media (max-width: 960px) {
   .progress {
     width: 45%;
   }
@@ -317,5 +305,77 @@ button:focus {
   }
   .hidden {
     transform: rotate(90deg) scale(2);
+  }
+}
+
+@media (max-width: 768px) {
+  .player-container {
+    padding: 0;
+  }
+  .player-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--small-font);
+  }
+  .progress {
+    width: 40%;
+  }
+  .play-btn,
+  .volume-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+  .speed-btn {
+    width: 25px;
+  }
+}
+
+@media (max-width: 620px) {
+  .controls {
+    padding: 0 10px;
+  }
+  .player-btn {
+    width: 100px;
+    height: 100px;
+  }
+  .progress {
+    width: 30%;
+  }
+  .play-btn,
+  .volume-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+  .speed-btn {
+    width: 20px;
+  }
+  .fullscreen svg {
+    width: 25px;
+  }
+}
+
+@media (max-width: 460px) {
+  .controls {
+    height: 40px;
+  }
+  .player-btn {
+    width: 70px;
+    height: 70px;
+  }
+  .progress {
+    width: 25%;
+  }
+  .play-btn,
+  .volume-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+  .speed-btn {
+    width: 15px;
+  }
+  .fullscreen svg {
+    width: 20px;
   }
 }
