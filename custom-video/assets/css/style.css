@@ -103,3 +103,32 @@ body {
 .section-title::after {
   margin-left: 0.65em;
 }
+
+
+/* FOOTER */
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 44px;
+}
+
+.footer-container a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-container a:hover {
+  color: var(--gold);
+}
+
+.git-and-date p {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.rs-school {
+  padding-left: 60px;
+}
