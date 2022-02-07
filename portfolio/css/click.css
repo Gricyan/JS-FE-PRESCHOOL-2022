@@ -62,3 +62,13 @@ button span:hover {
     width: 150px
   }
 }
+
+@media (max-width: 375px) {
+  button span {
+    width: 130px;
+  }
+  .portfolio-btn,
+  .button {
+    width: 130px
+  }
+}
