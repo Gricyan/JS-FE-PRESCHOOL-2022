@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Montserrat';
-  src: url("../assets/fonts/Montserrat-Regular.ttf");
+  src: url("../assets/fonts/Montserrat/Montserrat-Regular.ttf");
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url("../assets/fonts/Montserrat-Bold.ttf");
+  src: url("../assets/fonts/Montserrat/Montserrat-Bold.ttf");
   font-weight: 700;
 }
 
@@ -15,9 +15,8 @@
   --red: #ff0000;
   --white: #ffffff;
   --basic-font: 'Montserrat', sans-serif;
-  --bold-font: 60px;
-  --h2-font: 40px;
-  --regular-font: 20px;
+  --h2-font: 20px;
+  --regular-font: 16px;
 }
 
 .visually-hidden {
@@ -50,6 +49,7 @@ body {
   overflow-x: hidden;
   background-image: url(../assets/images/cinema.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
@@ -89,6 +89,69 @@ input {
   font-family: inherit;
   color: var(--red);
   font-size: var(--basic-font);
+}
+
+
+/* MAIN */
+
+.movies {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+.movie-item {
+  position: relative;
+  width: 24%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: var(--dark);
+  box-shadow: 0 0px 20px var(--dark);
+  overflow: hidden;
+}
+
+.movie-info {
+  position: relative;
+  min-height: 80px;
+  padding: 0 10px;
+}
+
+.movie-info h2 {
+  font-size: var(--h2-font);
+}
+
+.movie-info span {
+  position: absolute;
+  right: 15px;
+  top: -55px;
+  background-color: var(--red);
+  padding: 15px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px var(--dark);
+}
+
+.movie-overview h3 {
+  color: var(--red);
+}
+
+.movie-overview {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  padding: 20px;
+  background-image: url(../assets/images/overview-bg.png);
+  line-height: 1.5;
+  transform: translateY(101%);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in;
+}
+
+.movie-item:hover .movie-overview {
+  transform: translateY(0%);
 }
 
 
