@@ -69,7 +69,7 @@ body {
   margin: 30px auto;
 }
 
-.header-logo a {
+.header-logo>a {
   display: block;
   width: 170px;
   height: 100px;
@@ -77,6 +77,12 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  opacity: 1;
+  transition: transform 0.3s ease-in;
+}
+
+.header-logo a:hover {
+  opacity: 0.8;
 }
 
 input {
@@ -89,6 +95,24 @@ input {
   font-family: inherit;
   color: var(--red);
   font-size: var(--basic-font);
+}
+
+.search-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.xmark {
+  position: absolute;
+  width: 30px;
+  right: 5px;
+  transition: transform 0.3s ease-in;
+}
+
+.invisible {
+  opacity: 0;
+  transition: transform 0.3s ease-in;
 }
 
 
@@ -112,6 +136,14 @@ input {
   overflow: hidden;
 }
 
+.poster {
+  transition: all 0.2s ease;
+}
+
+.poster:hover {
+  filter: brightness(0.8);
+}
+
 .movie-info {
   position: relative;
   min-height: 80px;
@@ -124,6 +156,7 @@ input {
 
 .movie-info span {
   position: absolute;
+  min-width: 22px;
   right: 15px;
   top: -55px;
   background-color: var(--red);
@@ -185,4 +218,10 @@ input {
   height: 38px;
   background-image: url(../assets/svg/rs_school_js.svg);
   background-repeat: no-repeat;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.rs-school>a:hover {
+  opacity: 0.7;
 }

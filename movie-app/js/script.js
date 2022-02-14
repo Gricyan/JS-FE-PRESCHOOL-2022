@@ -1,60 +1,89 @@
-const requestUrl = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query=spring&page=1'
+/* SEND REQUEST */
 
-// GET method ---------------------------------------
+const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c`;
 
-function sendRequest(method, url) {
+getData(url);
 
-  return fetch(url).then(response => {
-    //return response.text()
-    return response.json()
-  })
-
+async function getData(url) {
+  const res = await fetch(url);
+  const data = await res.json();
+  showMovies(data)
 }
 
-sendRequest('GET', requestUrl)
-  .then((data) => {
+/* Movies section */
 
+function showMovies(data) {
+  let moviesContainer = document.querySelector('.movies');
 
+  moviesContainer.innerHTML = '';
 
-    console.log(data)
+  data.results.forEach((movie) => {
 
-    for (let i = 0; i < 15; i++) {
+    let src;
 
-      if (data.results[i].backdrop_path === null) {
-        continue;
-      } else {
-
-        const divItemElement = document.createElement("div");
-        divItemElement.classList.add("movie-item");
-
-        const imgPoster = document.createElement("img");
-        imgPoster.src = `https://www.themoviedb.org/t/p/w440_and_h660_face${data.results[i].poster_path}`
-
-        const divMovieInfo = document.createElement("div");
-        divMovieInfo.classList.add("movie-info");
-        const movieHeader = document.createElement("h2");
-        const movieHeaderName = document.createTextNode(data.results[i].title);
-        const movieRate = document.createElement("span");
-        const movieRateNum = document.createTextNode(data.results[i].vote_average);
-
-        const divMovieOverview = document.createElement("div");
-        divMovieOverview.classList.add("movie-overview");
-        const movieOverviewText = document.createTextNode(data.results[i].overview);
-
-        divItemElement.append(imgPoster);
-        divItemElement.append(divMovieInfo);
-        divMovieInfo.append(movieHeader);
-        movieHeader.append(movieHeaderName);
-        divMovieInfo.append(movieRate);
-        movieRate.append(movieRateNum);
-        divItemElement.append(divMovieOverview);
-        divMovieOverview.innerHTML = "<h3>Overview</h3>";
-        divMovieOverview.append(movieOverviewText);
-
-        document.querySelector(".movies").append(divItemElement);
-
-      };
-
+    if (movie.poster_path === null) {
+      src = "../assets/images/default-img.png"
+    } else {
+      src = `https://www.themoviedb.org/t/p/w440_and_h660_face${movie.poster_path}`
     }
+
+    const divMovieItem = document.createElement("div");
+    divMovieItem.classList.add("movie-item");
+    divMovieItem.innerHTML = `   
+
+      <img class="poster" src="${src}">        
+        <div class="movie-info">
+          <h2>${movie.title}</h2>
+          <span>${movie.vote_average}</span>
+        </div>
+        <div class="movie-overview">
+          <h3>Overview</h3>
+          <p>${movie.overview}</p>
+        </div>
+      `
+    moviesContainer.appendChild(divMovieItem);
+
   })
-  .catch(err => console.error(err))
+}
+
+/* Input Listener */
+
+const form = document.querySelector("form");
+const searchInput = document.querySelector(".header-search");
+
+searchInput.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+
+    const apiRequestUrl = `https://api.themoviedb.org/3/search/movie?query=${searchInput.value}&api_key=3fd2be6f0c70a2a598f084ddfb75487c`;
+
+    console.log(searchInput.value)
+    if (searchInput.value) {
+      getData(apiRequestUrl);
+    }
+  }
+});
+
+/* Clear button */
+
+const xMark = document.querySelector(".xmark");
+
+searchInput.addEventListener("keyup", (event) => {
+
+  if (searchInput.value) {
+    xMark.classList.remove('invisible')
+  }
+});
+
+searchInput.addEventListener("input", (event) => {
+
+  if (searchInput.value === '') {
+    xMark.classList.add('invisible')
+  }
+});
+
+xMark.addEventListener("click", (event) => {
+  searchInput.value = ''
+  searchInput.placeholder = 'Search'
+  xMark.classList.add('invisible')
+});
