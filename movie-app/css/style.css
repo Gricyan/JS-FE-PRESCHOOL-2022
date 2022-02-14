@@ -42,6 +42,7 @@ html {
 
 body {
   position: relative;
+  width: 100%;
   min-height: 100vh;
   font-family: var(--basic-font);
   font-size: var(--regular-font);
@@ -54,7 +55,7 @@ body {
 
 .container {
   box-sizing: border-box;
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -224,4 +225,25 @@ input {
 
 .rs-school>a:hover {
   opacity: 0.7;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-logo>a {
+    width: 100px;
+  }
+  .movie-item {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header-logo>a {
+    width: 60px;
+  }
+  input {
+    width: 150px;
+  }
+  .movie-item {
+    width: 98%;
+  }
 }
