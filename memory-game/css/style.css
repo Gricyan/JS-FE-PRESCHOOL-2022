@@ -18,6 +18,7 @@
 
 :root {
   --violet: #f300d6;
+  --yellow: #ffa12b;
   --dark-blue: #001145;
   --basic-font: 'Montserrat', sans-serif;
   --h2-font: 20px;
@@ -25,21 +26,88 @@
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   font-family: var(--basic-font);
   font-size: var(--regular-font);
+  font-weight: 700;
+  color: var(--dark-blue);
   background-image: url(../assets/img/bg.jpg);
 }
 
-.header-container,
-.footer-container {
-  max-width: 1040px;
+.entrance {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  /*background-color: #fff;*/
+  background-image: url(../assets/img/bg.jpg);
+  opacity: 1;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.entrance.hide {
+  opacity: 0;
+  z-index: 0;
+}
+
+input {
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--violet);
+}
+
+button {
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--violet);
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 640px;
   margin: auto;
   padding: 20px;
 }
 
 .logo {
   max-width: 150px;
+}
+
+table {
+  background-color: var(--dark-blue);
+  border-radius: 5px;
+  padding: 5px;
+  color: var(--yellow);
+}
+
+td {
+  min-width: 120px;
+  padding: 0 5px;
+}
+
+.td-header {
+  min-width: 120px;
+  border-right: 2px solid var(--violet);
+  padding: 0 5px;
+}
+
+.counter {
+  min-width: 20px;
+  display: inline-block;
+  text-align: center;
 }
 
 main {
@@ -161,6 +229,12 @@ main {
 
 /* FOOTER */
 
+.footer-container {
+  max-width: 640px;
+  margin: auto;
+  padding: 0 20px 20px;
+}
+
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -189,6 +263,7 @@ main {
   height: 38px;
   background-image: url(../assets/svg/rs_school_js.svg);
   background-repeat: no-repeat;
+  background-size: contain;
   opacity: 1;
   transition: all 0.2s ease;
 }
