@@ -115,6 +115,12 @@ main {
   animation: vibration 0.38s ease-in-out;
 }
 
+.match {
+  width: 100px;
+  height: 100px;
+  animation: bounce 0.5s alternate ease-in-out;
+}
+
 @keyframes vibration {
   0%,
   100% {
@@ -132,13 +138,6 @@ main {
   80% {
     transform: translateX(8px);
   }
-}
-
-.match {
-  width: 100px;
-  height: 100px;
-  animation: bounce 0.5s alternate ease-in-out;
-  filter: contrast(120%);
 }
 
 @keyframes bounce {
