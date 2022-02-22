@@ -54,6 +54,9 @@ function flipCard(event) {
 
 /* Match cards */
 
+const showScoreDiv = document.querySelector('.show-score-container')
+const showGameScore = document.querySelector('.game-score')
+
 function matchCars(img1, img2) {
 
   if (img1 === img2) {
@@ -62,6 +65,7 @@ function matchCars(img1, img2) {
     if (matchedCards == 8) {
 
       updateScore(counter)
+      showResult(counter)
 
       setTimeout(() => {
         movesShow.innerHTML = 0
@@ -138,7 +142,6 @@ const userNameShow = document.querySelector('.user-name')
 const button = document.querySelector('.btn');
 const entranceScreen = document.querySelector('.entrance');
 
-
 function createUser() {
   button.onclick = (event) => {
 
@@ -164,6 +167,57 @@ createUser()
 function updateScore(counter) {
   usersScore.moves.push(counter)
   let minScore = Math.min.apply(Math, usersScore.moves)
+
   let bestResultShow = document.querySelector('.best-result')
   bestResultShow.innerHTML = minScore
+
+  localStorage.setItem(usersScore.name, usersScore.moves)
+
+  setTimeout(() => {
+    localStorage.setItem('Best result', minScore)
+  }, 500)
+}
+
+function getLocalStorage() {
+
+  if (localStorage.getItem('Best result')) {
+    let minGameScore = localStorage.getItem('Best result')
+
+    updateScore(minGameScore)
+
+  }
+}
+window.addEventListener('load', getLocalStorage)
+
+/* Show game score */
+
+const tryAgainBtn = document.querySelector('.try-again-btn')
+
+function showResult(counter) {
+
+  let minGameScore = localStorage.getItem('Best result')
+
+  let resume = ''
+
+  if (!minGameScore) {
+    resume = 'it was just a first attempt, try more'
+  } else if (counter < minGameScore) {
+    resume = 'it\'s a new record!'
+  } else if (counter > minGameScore) {
+    resume = 'try harder!'
+  } else {
+    resume = 'try a bit more faster'
+  }
+
+  showGameScore.innerHTML = `
+  <p>You\'ve made ${counter} moves,</p>
+  <p>${resume}</p>`
+
+  showScoreDiv.classList.add('show')
+  showGameScore.classList.add('show')
+
+  tryAgainBtn.addEventListener('click', () => {
+    showScoreDiv.classList.remove('show')
+    showGameScore.classList.remove('show')
+  })
 }
