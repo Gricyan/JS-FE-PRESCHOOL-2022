@@ -101,7 +101,8 @@ input {
 }
 
 .show-score-container.show {
-  display: flex background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
   z-index: 1;
 }
 
@@ -116,12 +117,12 @@ input {
   transition: all 0.3s ease-in-out;
 }
 
-.game-score p {
-  line-height: 2;
-}
-
 .game-score.show {
   transform: translateY(-0vh);
+}
+
+.game-score p {
+  line-height: 2;
 }
 
 .header {
