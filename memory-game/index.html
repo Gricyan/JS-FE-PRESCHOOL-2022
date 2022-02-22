@@ -5,21 +5,50 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/assets/svg/favicon.svg">
   <title>Memory game</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
+  <div class="entrance">
+    <div class="enter-name">Please enter your name</div>
+    <form action="">
+      <input type="text" name="" id="userNameInput" value="Player" placeholder="Player">
+      <button class="btn">START</button>
+    </form>
+  </div>
+
+  <div class="show-score-container">
+    <div class="game-score">result</div>
+    <button class="try-again-btn">TRY AGAIN</button>
+  </div>
+
   <header class="header">
     <div class="header-container">
       <img class="logo" src="assets/svg/game-logo.svg" alt="Memory game logo">
     </div>
+
+    <table>
+      <tr>
+        <td class="td-header">Name:</td>
+        <td class="user-name"> </td>
+      </tr>
+      <tr>
+        <td class="td-header">Moves:</td>
+        <td class="counter">0</td>
+      </tr>
+      <tr>
+        <td class="td-header">Best result:</td>
+        <td class="best-result">0</td>
+      </tr>
+    </table>
   </header>
   <main>
     <div class="container">
       <ul class="cards">
       </ul>
-      <div class="counter"></div>
     </div>
   </main>
   <footer>
