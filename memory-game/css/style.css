@@ -159,7 +159,6 @@ td {
 .counter {
   min-width: 20px;
   display: inline-block;
-  text-align: center;
 }
 
 main {
@@ -187,7 +186,8 @@ main {
 }
 
 .card .back-view img {
-  max-width: 120px;
+  max-width: 100%;
+  border-radius: 5px;
 }
 
 .cards {
@@ -211,6 +211,7 @@ main {
   height: 100%;
   background-image: url(../assets/img/card-bg.jpg);
   background-size: contain;
+  background-position: center;
   border-radius: 5px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s linear;
@@ -334,11 +335,54 @@ main {
 }
 
 @media only screen and (max-width: 480px) {
+  .logo {
+    max-width: 100px;
+  }
   .header-logo>a {
     width: 60px;
   }
+  table {
+    font-size: 14px;
+  }
+  .td-header {
+    min-width: 100px;
+  }
+  .cards .card {
+    height: calc(80% / 4 - 10px);
+  }
   input {
     width: 150px;
+  }
+  .movie-item {
+    width: 98%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .container {
+    padding: 10px;
+    height: 500px;
+  }
+  .logo {
+    max-width: 70px;
+  }
+  .header-logo>a {
+    width: 50px;
+  }
+  table {
+    font-size: 12px;
+  }
+  .td-header {
+    min-width: 70px;
+  }
+  td {
+    min-width: 70px;
+  }
+  .cards .card {
+    height: calc(70% / 4 - 10px);
+  }
+  input {
+    width: 130px;
   }
   .movie-item {
     width: 98%;
