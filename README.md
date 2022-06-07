@@ -8,4 +8,4 @@
 
 3. [Movie App](https://gricyan.github.io/JS-FE-PRESCHOOL-2022/movie-app/)
 
-4. [Movie App](https://gricyan.github.io/JS-FE-PRESCHOOL-2022/memory-game/)
+4. [Memory game](https://gricyan.github.io/JS-FE-PRESCHOOL-2022/memory-game/)
