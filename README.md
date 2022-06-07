@@ -1,15 +1,11 @@
 # gricyan-JSFEPRESCHOOL
-Private repository for @gricyan
 
+## Tasks from JS/RS Pre-School 2022
 
-## task Portfolio
-https://rolling-scopes-school.github.io/gricyan-JSFEPRESCHOOL/portfolio/
+1. [Portfolio](https://gricyan.github.io/JS-FE-PRESCHOOL-2022/portfolio/)
 
-## task Custom video player
-https://rolling-scopes-school.github.io/gricyan-JSFEPRESCHOOL/custom-video/
+2. [Custom video player](https://gricyan.github.io/JS-FE-PRESCHOOL-2022/custom-video/)
 
-## task Movie App
-https://rolling-scopes-school.github.io/gricyan-JSFEPRESCHOOL/movie-app/
+3. [Movie App](https://gricyan.github.io/JS-FE-PRESCHOOL-2022/movie-app/)
 
-## task Memory game
-https://rolling-scopes-school.github.io/gricyan-JSFEPRESCHOOL/memory-game/
+4. [Movie App](https://gricyan.github.io/JS-FE-PRESCHOOL-2022/memory-game/)
