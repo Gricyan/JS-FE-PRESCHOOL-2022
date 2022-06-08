@@ -13,3 +13,5 @@
 
 
 [Privat link to original repo](https://github.com/rolling-scopes-school/gricyan-JSFEPRESCHOOL)
+
+[RS School Stage-0 Course](https://github.com/rolling-scopes-school/tasks/tree/master/stage0)
